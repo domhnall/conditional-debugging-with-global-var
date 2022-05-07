@@ -49,16 +49,16 @@ RSpec.describe User do
       end
 
       describe "where user exists for the name passed" do
-        it "should add a friend" do
+        it "should create a friendship for the name passed" do
           expect(@blue.is_friend?("Mr Blonde")).to be_falsey
           @blue.add_friend("Mr Blonde")
           expect(@blue.is_friend?("Mr Blonde")).to be_truthy
         end
 
-        it "should add a friend" do
+        it "should increase the total number of friends by 1" do
           orig_count = @blue.friends.size
-          # with_debug_flag{ @blue.add_friend("Mr Blonde") }  # Uncomment this line
-          @blud.add_friend("Mr Blonde")                       # Comment out this line
+          #with_debug_flag{ @blue.add_friend("Mr Blonde") }  # Uncomment this line
+          @blue.add_friend("Mr Blonde")                       # Comment out this line
           expect(@blue.friends.size).to eq orig_count+1
         end
       end

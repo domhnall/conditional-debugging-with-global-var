@@ -18,7 +18,7 @@ class User
     friend.add_friend(name)
   end
 
-  def remove_friend(friend_email)
+  def remove_friend(friend_name)
     return unless friend = @@all_users.find{ |u| u.name==friend_name }
     return unless is_friend?(friend_name)
     @friends.delete(friend)
